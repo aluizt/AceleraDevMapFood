@@ -29,15 +29,16 @@ public class PedidoService {
 	public void criarDados() {
 		List<Pedido> listaPedido =pedidoProcessor.criarPedidos();
 		pedidoRepository.saveAll(listaPedido);
-		int i=0;
+		
 		for(Pedido pedido: listaPedido) {
-			itemDoPedidoRepository.save( pedido.getItens().get(i));
-			i++;
+			itemDoPedidoRepository.saveAll( pedido.getItens());
+		
 		}
 		
 	}
 	
 	public List<Pedido> findAll(){
+		
 	    return pedidoRepository.findAll();
 	}
 

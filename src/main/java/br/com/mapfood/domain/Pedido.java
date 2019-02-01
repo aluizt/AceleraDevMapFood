@@ -31,10 +31,11 @@ public class Pedido implements Serializable {
 	@GeneratedValue(strategy= GenerationType.IDENTITY)
 	private Long idPedido;
 	private Long idCliente;
-	private Long idEstabelecimento;
+	private Long idEstabelecimento;    
 	private Long idMotoboy;
 	
 	private EstadoDoPedido statusPedido;
+	
 	
 	@OneToMany(mappedBy="pedido", cascade=CascadeType.ALL)
 	private List<ItemDoPedido> itens = new ArrayList();

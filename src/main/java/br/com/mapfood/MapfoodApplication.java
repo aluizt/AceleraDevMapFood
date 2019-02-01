@@ -28,8 +28,8 @@ public class MapfoodApplication implements CommandLineRunner {
 	
 	@Autowired
 	private PedidoService pedidoService;
-	
 
+	
 	public static void main(String[] args) {
 		SpringApplication.run(MapfoodApplication.class, args);
 	}
@@ -46,6 +46,8 @@ public class MapfoodApplication implements CommandLineRunner {
 		produtosEstabelecimentoService.processarFileProdutosEstabelecimento();
 		
 		pedidoService.criarDados();
+		
+		
 		
 	}
 }
